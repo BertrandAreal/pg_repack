@@ -85,12 +85,10 @@
     <ClCompile Include="..\bin\pgut\pgut-fe.c" />
     <ClCompile Include="..\bin\pgut\pgut.c" />
     <ClCompile Include="..\bin\pg_repack.c" />
-    <ClCompile Include="src\postgreSQL\MissingPostgreFunctions.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\bin\pgut\pgut-fe.h" />
     <ClInclude Include="..\bin\pgut\pgut.h" />
-    <ClInclude Include="src\postgreSQL\MissingPostgreFunctions.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\bin\expected\init.out" />
