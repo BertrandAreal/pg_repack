@@ -1,0 +1,2 @@
+Allow to link with EntrepriseDB's PostgreSQL version.
+libintl-8.lib is provide here by user-friendliness, but we cannot garantee this lib will stay up to date with the latest version of postgreSQL(tested here with PostgreSQL 9.6).
