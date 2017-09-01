@@ -431,22 +431,23 @@ simple_string_list_size(SimpleStringList list)
 	return i;
 }
 
-static char *
-prompt_for_password(void)
+static void
+prompt_for_password(char * passwordDest, size_t passwordSize)
 {
-	return simple_prompt("Password: ", 100, false);
+	simple_prompt("Password: ", passwordDest, 100, false);
 }
 
 
 PGconn *
 pgut_connect(const char *info, YesNo prompt, int elevel)
 {
-	char	   *passwd;
+	size_t passwdSize = 100;
+	char*  passwd = malloc(sizeof(char)*passwdSize);
 	StringInfoData add_pass;
 
 	if (prompt == YES)
 	{
-		passwd = prompt_for_password();
+		prompt_for_password(passwd, passwdSize-1);
 		initStringInfo(&add_pass);
 		appendStringInfoString(&add_pass, info);
 		appendStringInfo(&add_pass, " password=%s ", passwd);
@@ -491,8 +492,7 @@ pgut_connect(const char *info, YesNo prompt, int elevel)
 		if (conn && PQconnectionNeedsPassword(conn) && prompt != NO)
 		{
 			PQfinish(conn);
-			free(passwd);
-			passwd = prompt_for_password();
+			prompt_for_password(passwd, passwdSize);
 			if (add_pass.data != NULL)
 	 			resetStringInfo(&add_pass);
 			else

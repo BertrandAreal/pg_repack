@@ -1161,9 +1161,9 @@ swap_heap_or_index_files(Oid r1, Oid r2)
 	simple_heap_update(relRelation, &reltup2->t_self, reltup2);
 
 	/* Keep system catalogs current */
-	indstate = CatalogOpenIndexes(relRelation);
-	CatalogIndexInsert(indstate, reltup1);
-	CatalogIndexInsert(indstate, reltup2);
+	//indstate = CatalogOpenIndexes(relRelation);
+	CatalogTupleInsert(relRelation, reltup1);
+	CatalogTupleInsert(relRelation, reltup2);
 	CatalogCloseIndexes(indstate);
 
 	/*
