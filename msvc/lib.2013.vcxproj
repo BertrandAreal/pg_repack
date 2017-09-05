@@ -86,8 +86,7 @@
     <OutDir>bin\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>
-    </IncludePath>
+    <IncludePath>$(PostgreSQL64)\src\include\port\win32_msvc;$(PostgreSQL64)\src\include\port\win32;$(PostgreSQL64)\src\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\lib</LibraryPath>
     <TargetName>pg_repack</TargetName>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
@@ -144,7 +143,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);kernel32.lib;advapi32.lib;ws2_32.lib;postgreslib.lib;libpq.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);kernel32.lib;advapi32.lib;ws2_32.lib;postgres.lib;libpq.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

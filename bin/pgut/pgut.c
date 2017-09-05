@@ -103,12 +103,15 @@ pgut_putenv(const char *key, const char *value)
  * If the string parses okay, return true, else false.
  * If okay and result is not NULL, return the value in *result.
  */
+/*
 bool
 parse_bool(const char *value, bool *result)
 {
 	return parse_bool_with_len(value, strlen(value), result);
 }
+*/
 
+/*
 bool
 parse_bool_with_len(const char *value, size_t len, bool *result)
 {
@@ -152,7 +155,7 @@ parse_bool_with_len(const char *value, size_t len, bool *result)
 			break;
 		case 'o':
 		case 'O':
-			/* 'o' is not unique enough */
+			// 'o' is not unique enough 
 			if (pg_strncasecmp(value, "on", (len > 2 ? len : 2)) == 0)
 			{
 				if (result)
@@ -187,9 +190,10 @@ parse_bool_with_len(const char *value, size_t len, bool *result)
 	}
 
 	if (result)
-		*result = false;		/* suppress compiler warning */
+		*result = false;		// suppress compiler warning
 	return false;
 }
+*/
 
 /*
  * Parse string as 32bit signed int.
@@ -979,6 +983,7 @@ parse_elevel(const char *value)
 	return ERROR;		/* unknown value; just return ERROR */
 }
 
+/*
 int
 errcode(int sqlerrcode)
 {
@@ -986,7 +991,7 @@ errcode(int sqlerrcode)
 	edata->code = sqlerrcode;
 	return 0;
 }
-
+*/
 int
 errcode_errno(void)
 {
@@ -995,6 +1000,7 @@ errcode_errno(void)
 	return 0;
 }
 
+/*
 int
 errmsg(const char *fmt,...)
 {
@@ -1014,9 +1020,10 @@ errmsg(const char *fmt,...)
 		appendStringInfoString(&edata->msg, strerror(edata->save_errno));
 	trimStringBuffer(&edata->msg);
 
-	return 0;	/* return value does not matter */
-}
+	return 0;	// return value does not matter
+}*/
 
+/*
 int
 errdetail(const char *fmt,...)
 {
@@ -1032,8 +1039,9 @@ errdetail(const char *fmt,...)
 	} while (!ok);
 	trimStringBuffer(&edata->detail);
 
-	return 0;	/* return value does not matter */
+	return 0;	// return value does not matter
 }
+*/
 
 #ifdef WIN32
 static CRITICAL_SECTION cancelConnLock;
