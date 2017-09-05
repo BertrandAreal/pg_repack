@@ -79,14 +79,15 @@
     <TargetName>pg_repack</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\lib</LibraryPath>
+    <IncludePath>$(PostgreSQL64)\src\include\port\win32_msvc;$(PostgreSQL64)\src\include\port\win32;$(PostgreSQL64)\src\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\binaries\lib;$(PostgreSQL64)\lib</LibraryPath>
     <TargetName>pg_repack</TargetName>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>bin\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
+    <IncludePath>
+    </IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\lib</LibraryPath>
     <TargetName>pg_repack</TargetName>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
