@@ -171,6 +171,16 @@
     <None Include="..\lib\pg_repack.sql.in" />
     <None Include="..\lib\uninstall_pg_repack.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="bin.2013.vcxproj">
+      <Project>{b6b37f22-9e44-4240-aaa0-650d4ac2c1e2}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
