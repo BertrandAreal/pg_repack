@@ -64,7 +64,7 @@
     <OutDir>bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL32)\include;$(PostgreSQL32)\include\internal;$(PostgreSQL32)\include\server;$(PostgreSQL32)\include\server\port\win32;$(PostgreSQL32)\include\server\port\win32_msvc</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL32)\include;$(PostgreSQL32)\include\internal;$(PostgreSQL32)\include\server;$(PostgreSQL32)\include\server\port\win32;$(PostgreSQL32)\src\include;$(PostgreSQL32)\include\server\port\win32_msvc</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(PostgreSQL32)\lib</LibraryPath>
     <TargetName>pg_repack</TargetName>
   </PropertyGroup>
@@ -72,20 +72,20 @@
     <OutDir>bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL32)\include;$(PostgreSQL32)\include\internal;$(PostgreSQL32)\include\server;$(PostgreSQL32)\include\server\port\win32;$(PostgreSQL32)\include\server\port\win32_msvc</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL32)\include;$(PostgreSQL32)\include\internal;$(PostgreSQL32)\include\server;$(PostgreSQL32)\include\server\port\win32;$(PostgreSQL32)\src\include;$(PostgreSQL32)\include\server\port\win32_msvc</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(PostgreSQL32)\lib</LibraryPath>
     <TargetName>pg_repack</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\src\interfaces\libpq;$(PostgreSQL64)\src\include\port\win32;$(PostgreSQL64)\src\include\port\win32_msvc;$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\src\include;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
-    <LibraryPath>$(ProjectDir)lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\binaries\lib;$(PostgreSQL64)\lib</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\src\include;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
+    <LibraryPath>$(ProjectDir)lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\lib</LibraryPath>
     <TargetName>pg_repack</TargetName>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>bin\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\src\interfaces\libpq;$(PostgreSQL64)\src\include\port\win32;$(PostgreSQL64)\src\include\port\win32_msvc;$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\src\include;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
-    <LibraryPath>$(ProjectDir)lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\binaries\lib;$(PostgreSQL64)\lib</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(PostgreSQL64)\include;$(PostgreSQL64)\include\internal;$(PostgreSQL64)\include\server;$(PostgreSQL64)\include\server\port\win32;$(PostgreSQL64)\src\include;$(PostgreSQL64)\include\server\port\win32_msvc</IncludePath>
+    <LibraryPath>$(ProjectDir)lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(PostgreSQL64)\lib</LibraryPath>
     <TargetName>pg_repack</TargetName>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>bin\$(Platform)\$(Configuration)\</OutDir>
@@ -104,7 +104,7 @@
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;advapi32.lib;ws2_32.lib;libpq.lib;libpgport.lib;libintl-8.lib;postgres.lib;libpq.lib</AdditionalDependencies>
+      <AdditionalDependencies>wldap32.lib;ws2_32.lib;secur32.lib;postgreslib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);libpq.lib;libpgport.lib;libintl-8.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(SolutionName).exe</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -130,7 +130,7 @@
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;advapi32.lib;ws2_32.lib;libpq.lib;libpgport.lib;libintl-8.lib;postgres.lib;libpq.lib</AdditionalDependencies>
+      <AdditionalDependencies>wldap32.lib;ws2_32.lib;secur32.lib;postgreslib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);libpq.lib;libpgport.lib;libintl-8.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(SolutionName).exe</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
